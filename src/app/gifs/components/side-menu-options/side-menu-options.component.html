@@ -18,5 +18,19 @@
       }}</span>
     </div>
   </a>
-  }
+  } @if (gifServices.searchHistoryKeys().length > 0) {
+
+  <p class="mt-2 font-bold">Busquedas recientes:</p>
+
+  @for(key of gifServices.searchHistoryKeys(); track key) {
+  <a
+    [routerLink]="['/dashboard/history', key]"
+    class="w-full mt-4 px-2 inline-flex space-x-2 items-center border-b border-slate-700 py-3 hover:bg-white/5 transition ease-linear duration-150"
+  >
+    <div>
+      <i class="fa-solid text-sm fa-clock-rotate-left"></i>
+      <span class="text-md leading-5 text-white"> {{ key }}</span>
+    </div>
+  </a>
+  } }
 </div>
