@@ -1,13 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { GifService } from '../../services/gif.service';
-
-interface MenuOption {
-  icon: string;
-  label: string;
-  route: string;
-  subLabel: string;
-}
+import type { MenuOption } from '../../interfaces/gif.menuOption.interface';
 
 @Component({
   selector: 'gifs-side-menu-options',
@@ -23,6 +17,12 @@ export class SideMenuOptionsComponent {
       label: 'Trending',
       route: '/dashboard/trending',
       subLabel: 'Lo mas popular',
+    },
+    {
+      icon: 'fa-regular fa-rectangle-list',
+      label: 'Masonry',
+      route: '/dashboard/masonry',
+      subLabel: 'Grupos de 3',
     },
     {
       icon: 'fa-solid fa-magnifying-glass',
